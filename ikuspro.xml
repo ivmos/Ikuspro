@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Fichero JNLP de Ikuspro -->
+<jnlp  spec="6.0+"  codebase="http://127.0.0.1/ikuspro"  href="swingset2.jnlp">  
+	<information>    
+		<title>Ikuspro</title>    
+		<vendor>Iván Mosquera Paulo</vendor>    
+		<homepage href="docs/help.html"/>    
+		<description>Ikuspro</description>    
+		<description kind="short">Simulador gráfico de programas.
+		</description>    
+		<icon href="resources/ikusproLogo.png"/>    
+		<icon kind="splash" href="resources/splash.png"/>    
+		<offline-allowed/>     
+		<shortcut online="false">      
+			<desktop/>      
+			<menu submenu="Ikuspro"/>    
+		</shortcut>  
+	</information>  
+	
+	<security>      
+		<all-permissions/>  
+	</security>  
+	<update check="timeout" policy="prompt-update">
+
+	</update>
+	<resources>    
+		<j2se version="1.6+" java-vm-args="-esa -Xnoclassgc"/>    
+		<jar href="ikuspro.jar"/>  
+	</resources>  
+	<application-desc main-class="ikuspro.main.Ikuspro"/>
+</jnlp> 
+

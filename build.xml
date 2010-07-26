@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project ikuspro_1.0">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+    	<property name="version.num" value="1.0.0.0"/>
+    	        	            	     <buildnumber file="build.num"/>
+        <jar destfile="F:/ktulur/workspace/ikuspro_1.0/release/ikuspro.jar" filesetmanifest="mergewithoutmain">
+        	
+        	<manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Main-Class" value="ikuspro.main.Ikuspro"/>
+				<attribute name="Class-Path" value="."/>
+            	<attribute name="SplashScreen-Image" value="splash.png"/>
+            	
+
+            </manifest>
+        	
+            <fileset dir="F:/ktulur/workspace/ikuspro_1.0/bin"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/Archivos de programa/eclipse/plugins/org.junit4_4.3.1/junit.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="F:/ktulur/workspace/ikuspro_1.0/lib/rsyntaxtextarea.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="F:/ktulur/workspace/ikuspro_1.0/lib/antlr-3.1.3.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="F:/ktulur/workspace/ikuspro_1.0/lib/chardet.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="F:/ktulur/workspace/ikuspro_1.0/lib/xom-1.2.1.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="F:/ktulur/workspace/ikuspro_1.0/lib/swingx-1.0.jar"/>
+        	<zipfileset excludes="META-INF/*.SF" src="F:/ktulur/workspace/ikuspro_1.0/lib/substance.jar"/>
+        </jar>
+    	<signjar keystore="release/myKeyStore" alias="myself" jar="release/ikuspro.jar" storepass="pogayas"></signjar>
+    	
+    	
+    	
+    	<copy file="release/ikuspro.jar" todir="C:/AppServ/www/ikuspro/"/>
+    	<copy file="release/ikuspro.jar" todir="C:/AppServ/www/ikuspro/ikuspro/"/>
+    	<copy file="release/LEEME.txt" todir="C:/AppServ/www/ikuspro/ikuspro"/>
+    	
+    	<property name="launch4j.dir" location="C:\Archivos de programa\Launch4j" />
+    	<taskdef name="launch4j"
+    	    classname="net.sf.launch4j.ant.Launch4jTask"
+    	    classpath="${launch4j.dir}/launch4j.jar
+    	        :${launch4j.dir}/lib/xstream.jar" />
+    	<launch4j configFile="release/ikuspro_launch4j.xml" fileVersion="1.0.0.0" />
+    	<copy file="release/ikuspro.exe" todir="C:/AppServ/www/ikuspro/ikuspro/"/>
+    	
+    	<copy todir="C:/AppServ/www/ikuspro/pruebas/" >
+    		<fileset dir="doc/pruebas/codigo" />
+    	</copy>
+    	<!-- <copy file="doc/pruebas/InformePruebas.pdf" todir="C:/AppServ/www/ikuspro/pruebas/"/> -->
+    	<copy file="resources/logo16.png" todir="C:/AppServ/www/ikuspro/"/>
+    	<copy file="resources/logo32.png" todir="C:/AppServ/www/ikuspro/"/>
+    	<copy file="resources/logo48.png" todir="C:/AppServ/www/ikuspro/"/>
+    	<copy file="resources/splashfinal.png" todir="C:/AppServ/www/ikuspro/"/>
+    	<copy file="release/index.html" todir="C:/AppServ/www/ikuspro/"/>
+    	<copy file="release/styles.css" todir="C:/AppServ/www/ikuspro/"/>
+    	<copy file="release/ikuspro.jnlp" todir="C:/AppServ/www/ikuspro/"/>
+    	<copy file="doc/manual/manual_ikuspro.pdf" todir="C:/AppServ/www/ikuspro/"/>
+    	<zip destfile="C:/AppServ/www/ikuspro/pruebas.zip"
+    	       basedir="C:/AppServ/www/ikuspro/pruebas/"
+    	  />
+    	<zip destfile="C:/AppServ/www/ikuspro/ikuspro.zip"
+    		basedir="C:/AppServ/www/ikuspro/ikuspro/"
+    	/>
+    	<delete dir="C:/AppServ/www/ikuspro/pruebas/"/>
+    	<delete dir="C:/AppServ/www/ikuspro/ikuspro/"/>
+    </target>
+	
+	    	  
+	    	
+</project>

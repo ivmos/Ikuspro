@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interpretes>
+	<interprete>
+		<carpeta>c</carpeta>
+		<activado>TRUE</activado>
+		<extensiones>
+			<extension>c</extension>
+			<extension>cpp</extension>
+		</extensiones>
+	</interprete>
+	
+	<interprete>
+		<carpeta>ada</carpeta>
+		<activado>FALSE</activado>
+		<extensiones>
+			<extension>ada</extension>
+		</extensiones>
+	</interprete>
+	
+</interpretes>

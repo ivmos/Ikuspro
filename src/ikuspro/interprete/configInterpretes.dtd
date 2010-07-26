@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT interpretes (interprete*) >
+<!ELEMENT interprete (carpeta,activado, extensiones )>
+<!ELEMENT carpeta (#PCDATA) >
+<!ELEMENT activado (#PCDATA) >
+<!ELEMENT extensiones (extension+) >
+<!ELEMENT extension (#PCDATA) >
+
